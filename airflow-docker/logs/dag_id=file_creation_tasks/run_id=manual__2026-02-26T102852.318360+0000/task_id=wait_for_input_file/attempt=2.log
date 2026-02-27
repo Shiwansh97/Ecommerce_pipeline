@@ -1,0 +1,30 @@
+[2026-02-26T10:34:30.908+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: file_creation_tasks.wait_for_input_file manual__2026-02-26T10:28:52.318360+00:00 [queued]>
+[2026-02-26T10:34:30.930+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: file_creation_tasks.wait_for_input_file manual__2026-02-26T10:28:52.318360+00:00 [queued]>
+[2026-02-26T10:34:30.931+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2026-02-26T10:34:30.961+0000] {taskinstance.py:2191} INFO - Executing <Task(FileSensor): wait_for_input_file> on 2026-02-26 10:28:52.318360+00:00
+[2026-02-26T10:34:30.976+0000] {standard_task_runner.py:60} INFO - Started process 149 to run task
+[2026-02-26T10:34:30.986+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'file_creation_tasks', 'wait_for_input_file', 'manual__2026-02-26T10:28:52.318360+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/file_creation.py', '--cfg-path', '/tmp/tmplfh02jf8']
+[2026-02-26T10:34:30.994+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask wait_for_input_file
+[2026-02-26T10:34:31.167+0000] {task_command.py:423} INFO - Running <TaskInstance: file_creation_tasks.wait_for_input_file manual__2026-02-26T10:28:52.318360+00:00 [running]> on host 745c20178ec5
+[2026-02-26T10:34:31.391+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='file_creation_tasks' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T10:28:52.318360+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T10:28:52.318360+00:00'
+[2026-02-26T10:34:31.464+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/sensors/base.py", line 265, in execute
+    raise e
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/sensors/base.py", line 247, in execute
+    poke_return = self.poke(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/sensors/filesystem.py", line 63, in poke
+    hook = FSHook(self.fs_conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/filesystem.py", line 64, in __init__
+    conn = self.get_connection(fs_conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/base.py", line 82, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/connection.py", line 479, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `fs_default` isn't defined
+[2026-02-26T10:34:31.476+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=file_creation_tasks, task_id=wait_for_input_file, execution_date=20260226T102852, start_date=20260226T103430, end_date=20260226T103431
+[2026-02-26T10:34:31.530+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 4 for task wait_for_input_file (The conn_id `fs_default` isn't defined; 149)
+[2026-02-26T10:34:31.604+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-02-26T10:34:31.724+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

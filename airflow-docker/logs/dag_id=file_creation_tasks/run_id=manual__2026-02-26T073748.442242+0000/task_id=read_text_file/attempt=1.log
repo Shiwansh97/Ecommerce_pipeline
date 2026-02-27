@@ -1,0 +1,213 @@
+[2026-02-26T07:37:50.856+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: file_creation_tasks.read_text_file manual__2026-02-26T07:37:48.442242+00:00 [queued]>
+[2026-02-26T07:37:50.866+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: file_creation_tasks.read_text_file manual__2026-02-26T07:37:48.442242+00:00 [queued]>
+[2026-02-26T07:37:50.867+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T07:37:50.894+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): read_text_file> on 2026-02-26 07:37:48.442242+00:00
+[2026-02-26T07:37:50.902+0000] {standard_task_runner.py:60} INFO - Started process 218 to run task
+[2026-02-26T07:37:50.909+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'file_creation_tasks', 'read_text_file', 'manual__2026-02-26T07:37:48.442242+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/file_creation.py', '--cfg-path', '/tmp/tmp2cileqie']
+[2026-02-26T07:37:50.915+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask read_text_file
+[2026-02-26T07:37:51.003+0000] {task_command.py:423} INFO - Running <TaskInstance: file_creation_tasks.read_text_file manual__2026-02-26T07:37:48.442242+00:00 [running]> on host e62fbbefe656
+[2026-02-26T07:37:51.088+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='file_creation_tasks' AIRFLOW_CTX_TASK_ID='read_text_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T07:37:48.442242+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T07:37:48.442242+00:00'
+[2026-02-26T07:37:51.096+0000] {python.py:201} INFO - Done. Returned value was: from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, udf,when,abs,from_utc_timestamp
+from pyspark.sql.types import IntegerType, TimestampType
+from datetime import datetime, timedelta
+ 
+ 
+# Create a Spark session
+spark = SparkSession.builder.appName("ProcessingTimeCalculation").config("spark.sql.shuffle.partitions", "1000").config("spark.serializer", "org.apache.spark.serializer.KryoSerializer").getOrCreate()
+ 
+ 
+holidays = []
+holiday_df = spark.sql("SELECT EffectiveIntervalStart, EffectiveIntervalEnd + interval -1 days as EffectiveIntervalEnd FROM dm_dcrm_db.CalendarRuleBase_base where EffectiveIntervalStart is not null")
+for i in holiday_df.rdd.collect():
+  currDate = i[0]
+  while currDate <i[1]:
+    holidays.append(currDate.date())
+    currDate += timedelta(days=1)
+ 
+
+business_start = datetime.strptime("07:30:00", "%H:%M:%S").time()
+business_end = datetime.strptime("15:30:00", "%H:%M:%S").time()
+business_end_fri = datetime.strptime("12:00:00", "%H:%M:%S").time()
+ 
+def calculate_business_minutes(start_timestamp, finish_timestamp):
+    # If the Request is in progress, use the current time
+    if finish_timestamp is None:
+        finish_timestamp = datetime.now()
+    if start_timestamp is None:
+        return 0
+    total_minutes = 0
+    current_timestamp = start_timestamp
+    while current_timestamp <= finish_timestamp:
+        # Exclude weekends and holidays
+        if current_timestamp.weekday() == 4:  # Friday
+            work_finish = business_end_fri
+        else:
+            work_finish = business_end
+        if current_timestamp.weekday() == 5 or current_timestamp.weekday() == 6 or current_timestamp.date() in holidays:
+            current_timestamp += timedelta(days=1)
+            continue
+        start_time = max(datetime.combine(current_timestamp.date(), business_start), start_timestamp)
+        end_time = min(datetime.combine(current_timestamp.date(), work_finish), finish_timestamp)
+        if start_time <= end_time:
+            diff = end_time - start_time
+            total_minutes += (diff.seconds // 60)
+        current_timestamp += timedelta(days=1)
+    return total_minutes
+ 
+calculate_business_minutes_udf = udf(calculate_business_minutes, IntegerType())
+spark.udf.register("calculate_business_minutes_udf", calculate_business_minutes, IntegerType())
+ 
+df=spark.sql("select request_id,stage,logintype,log_date ,next_event_data  from dm_portal_servicerequest_db.vw_request_history_employee where next_event_data is not null").persist()
+ 
+df = df.withColumn("log_date", col("log_date").cast(TimestampType()))
+df = df.withColumn("next_event_data", col("next_event_data").cast(TimestampType()))
+df = df.withColumn("time_taken_minutes", calculate_business_minutes_udf("next_event_data","log_date"))
+ 
+ 
+df.createOrReplaceTempView("processingtime")
+ 
+df_final=spark.sql('''select request_id,stage,Logintype,time_taken_minutes,log_date,next_event_data,SUM(CASE 
+            WHEN Logintype = 'Employee' and nvl(stage,'X') not in ('Dubai 2040 Alignment','External Entity','Dubai Development Authority','Dubai Development Authority','Road and Transport Authority','Pharmacy','External','Maritime Business Developement') THEN time_taken_minutes 
+            ELSE 0 
+        END) OVER (PARTITION BY request_id) AS employee_time FROM processingtime where next_event_data is not null''')
+ 
+df_final.write.mode("overwrite").option("compression","snappy").format("parquet").saveAsTable("dm_portal_servicerequest_db.tbl_request_history_employee")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, udf,when,abs,from_utc_timestamp
+from pyspark.sql.types import IntegerType, TimestampType
+from datetime import datetime, timedelta
+ 
+ 
+# Create a Spark session
+spark = SparkSession.builder.appName("StrategicServicesDGDashboard").config("spark.sql.shuffle.partitions", "2000").config("spark.serializer", "org.apache.spark.serializer.KryoSerializer").getOrCreate()
+ 
+ 
+holidays = []
+holiday_df = spark.sql("SELECT EffectiveIntervalStart, EffectiveIntervalEnd + interval -1 days as EffectiveIntervalEnd FROM dm_dcrm_db.CalendarRuleBase_base where EffectiveIntervalStart is not null")
+for i in holiday_df.rdd.collect():
+	currDate = i[0]
+	while currDate <i[1]:
+		holidays.append(currDate.date())
+		currDate += timedelta(days=1)
+ 
+ 
+ 
+sql_query = """
+SELECT DISTINCT source_system,
+                loginid,
+                servicecode,
+                request_id,
+                servicenameen,
+                servicenamear,
+                status,
+                (CASE
+                     WHEN servicecode='3550' THEN coalesce(payment_date,request_date) + interval -4 hours
+                     ELSE request_date + interval -4 hours
+                 END) request_date,
+                (last_updated_date + interval -4 hours) last_updated_date,
+                channel,
+                umuser_full_name,
+                departmentnameen,
+                departmentnamear,
+                user_type AS customer_type,
+                sub_category
+FROM dm_portal_servicerequest_db.tbl_all_system_request_dg_dashboard_new
+WHERE servicecode<>'NA'
+  AND request_date>='2021-01-01'
+"""
+ 
+df = spark.sql(sql_query).persist()
+#df.show(truncate=False)
+ 
+ 
+ 
+business_start = datetime.strptime("07:30:00", "%H:%M:%S").time()
+business_end = datetime.strptime("15:30:00", "%H:%M:%S").time()
+business_end_fri = datetime.strptime("12:00:00", "%H:%M:%S").time()
+ 
+ 
+def calculate_business_minutes(start_timestamp, finish_timestamp):
+    # If the Request is in progress, use the current time
+    if finish_timestamp is None:
+        finish_timestamp = datetime.now()
+ 
+    if start_timestamp is None:
+        return 0
+ 
+    total_minutes = 0
+    current_timestamp = start_timestamp
+ 
+
+    while current_timestamp <= finish_timestamp:
+        # Exclude weekends and holidays
+        if current_timestamp.weekday() == 4:  # Friday
+            work_finish = business_end_fri
+        else:
+            work_finish = business_end
+ 
+ 
+        if current_timestamp.weekday() == 5 or current_timestamp.weekday() == 6 or current_timestamp.date() in holidays:
+            current_timestamp += timedelta(days=1)
+            continue
+ 
+        start_time = max(datetime.combine(current_timestamp.date(), business_start), start_timestamp)
+        end_time = min(datetime.combine(current_timestamp.date(), work_finish), finish_timestamp)
+ 
+ 
+ 
+        if start_time <= end_time:
+            diff = end_time - start_time
+            total_minutes += (diff.seconds // 60)
+ 
+ 
+ 
+        current_timestamp += timedelta(days=1)
+ 
+ 
+    return total_minutes
+ 
+ 
+calculate_business_minutes_udf = udf(calculate_business_minutes, IntegerType())
+spark.udf.register("calculate_business_minutes_udf", calculate_business_minutes, IntegerType())
+ 
+df_servicecost=spark.read.option("header","true").csv("/user/bigdata_developer/capgemini_projects/strategic_services/Service_cost_2.csv")
+ 
+ 
+df_servicecost.dropDuplicates()
+ 
+ 
+df_servicecost.createOrReplaceTempView("servicecost")
+ 
+df = df.withColumn("request_date", col("request_date").cast(TimestampType()))
+#df = df.withColumn("request_date", from_utc_timestamp("request_date","Asia/Dubai"))
+df = df.withColumn("last_updated_date", when(col("last_updated_date").isNull(), datetime.now()).otherwise(col("last_updated_date")).cast(TimestampType()))
+df = df.withColumn("time_taken_minutes", calculate_business_minutes_udf("request_date", "last_updated_date"))
+ 
+df.createOrReplaceTempView("requestdata")
+ 
+df_new=spark.sql("select a.source_system,a.loginid,a.servicecode,a.request_id,a.servicenameen as service_name_en,a.servicenamear as service_name_ar,a.status as request_status,a.request_date,a.last_updated_date,a.channel,a.umuser_full_name as customer_user_name,round(abs(nvl(em.employee_time,a.time_taken_minutes)/60/8)) as processing_time,round(abs((a.time_taken_minutes)/60/8)) as completion_time,c.cost,case when a.servicecode in ('3076','3070','3032','3046') then cast(a.sub_category as float) When a.servicecode = '3044' then case when cast(a.sub_category as float)*4 > 20 then 20 else cast(a.sub_category as float)*4 end else nvl(cast(b.service_process_sla as decimal(10,3)),cast(bc.service_process_sla as decimal(10,3))) end as service_process_sla,case when cast((nvl(em.employee_time,a.time_taken_minutes)/60/8) as decimal(10,3)) <= case when a.servicecode in ('3076','3070','3032','3046') then cast(a.sub_category as float) When a.servicecode = '3044' then case when cast(a.sub_category as float)*4 > 20 then 20 else cast(a.sub_category as float)*4 end else nvl(cast(b.service_process_sla as decimal(10,3)),cast(bc.service_process_sla as decimal(10,3))) end then 'True' else 'False' end as within_sla,e.name_en as nationality_en,e.name_ar as nationality_ar,a.departmentnameen as department_name,a.departmentnamear as department_name_ar,f.sectionname as section_name_ar,f.sectionnameen as section_name,g.name_en as sector_name_en,g.name_ar as sector_name_ar,a.customer_type,a.sub_category,a.time_taken_minutes  from requestdata a left join dm_strategic_services_db.service_define_sla_new_final b on a.servicecode=b.servicecode left join dm_strategic_services_db.service_define_sla_category bc on a.servicecode=bc.servicecode and trim(a.sub_category) = trim(bc.description) left join servicecost c on a.servicecode=c.service_id left join dm_um_db.um_users_base d on a.loginid = d.user_id left join dm_um_db.nationality_base e on d.nationality = e.nationality_id left join dm_um_db.dos_services_base f on a.servicecode = f.servicecode left join dm_um_db.sector_sc_base g on f.sectorid = g.sector_id left join dm_portal_servicerequest_db.vw_request_history_employee_final em on a.request_id = em.request_id and a.source_system<>'Labware'")
+ 
+ 
+df_new.write.mode("overwrite").option("compression", "snappy").format("parquet").saveAsTable("dm_portal_servicerequest_db.tbl_strategic_services_kpi_dashboard")
+[2026-02-26T07:37:51.124+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=file_creation_tasks, task_id=read_text_file, execution_date=20260226T073748, start_date=20260226T073750, end_date=20260226T073751
+[2026-02-26T07:37:51.163+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T07:37:51.204+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,328 @@
+[2026-02-26T11:08:43.614+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:08:43.633+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:08:43.635+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:08:43.663+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:08:43.675+0000] {standard_task_runner.py:60} INFO - Started process 92 to run task
+[2026-02-26T11:08:43.683+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmp2on9x89o']
+[2026-02-26T11:08:43.690+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask wait_for_input_file
+[2026-02-26T11:08:43.833+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:08:43.981+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:08:44.011+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eaf940>
+[2026-02-26T11:08:44.068+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:08:44.099+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:08:44.160+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:08:56.495+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:08:56.511+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:08:56.512+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:08:56.540+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:08:56.549+0000] {standard_task_runner.py:60} INFO - Started process 95 to run task
+[2026-02-26T11:08:56.555+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpbbkkr_or']
+[2026-02-26T11:08:56.560+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask wait_for_input_file
+[2026-02-26T11:08:56.713+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:08:56.870+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:08:56.890+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb2160>
+[2026-02-26T11:08:56.929+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:08:56.970+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:08:57.028+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:09:12.354+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:09:12.386+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:09:12.388+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:09:12.434+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:09:12.455+0000] {standard_task_runner.py:60} INFO - Started process 105 to run task
+[2026-02-26T11:09:12.468+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpzh9flfrr']
+[2026-02-26T11:09:12.479+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask wait_for_input_file
+[2026-02-26T11:09:12.729+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:09:13.001+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:09:13.038+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:09:13.113+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:09:13.169+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:09:13.247+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:09:25.331+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:09:25.345+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:09:25.347+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:09:25.369+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:09:25.379+0000] {standard_task_runner.py:60} INFO - Started process 108 to run task
+[2026-02-26T11:09:25.386+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpk24h32ys']
+[2026-02-26T11:09:25.394+0000] {standard_task_runner.py:88} INFO - Job 6: Subtask wait_for_input_file
+[2026-02-26T11:09:25.536+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:09:25.690+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:09:25.712+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:09:25.756+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:09:25.801+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:09:25.856+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:09:38.613+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:09:38.640+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:09:38.641+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:09:38.680+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:09:38.697+0000] {standard_task_runner.py:60} INFO - Started process 111 to run task
+[2026-02-26T11:09:38.707+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmp7c38hgyx']
+[2026-02-26T11:09:38.715+0000] {standard_task_runner.py:88} INFO - Job 7: Subtask wait_for_input_file
+[2026-02-26T11:09:38.901+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:09:39.105+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:09:39.140+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:09:39.191+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:09:39.243+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:09:39.313+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:09:52.376+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:09:52.395+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:09:52.397+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:09:52.424+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:09:52.437+0000] {standard_task_runner.py:60} INFO - Started process 122 to run task
+[2026-02-26T11:09:52.445+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpwumxqhuw']
+[2026-02-26T11:09:52.451+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask wait_for_input_file
+[2026-02-26T11:09:52.605+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:09:52.769+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:09:52.797+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:09:52.849+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:09:52.899+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:09:52.979+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:10:05.589+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:10:05.623+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:10:05.626+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:10:05.680+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:10:05.704+0000] {standard_task_runner.py:60} INFO - Started process 125 to run task
+[2026-02-26T11:10:05.720+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmp83q44c9m']
+[2026-02-26T11:10:05.731+0000] {standard_task_runner.py:88} INFO - Job 9: Subtask wait_for_input_file
+[2026-02-26T11:10:05.963+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:10:06.148+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:10:06.183+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:10:06.238+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:10:06.297+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:10:06.377+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:10:19.196+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:10:19.220+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:10:19.221+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:10:19.249+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:10:19.264+0000] {standard_task_runner.py:60} INFO - Started process 137 to run task
+[2026-02-26T11:10:19.272+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmp2_2t27p1']
+[2026-02-26T11:10:19.281+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask wait_for_input_file
+[2026-02-26T11:10:19.470+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:10:19.745+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:10:19.784+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:10:19.859+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:10:19.891+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:10:19.978+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:10:35.107+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:10:35.148+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:10:35.152+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:10:35.220+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:10:35.247+0000] {standard_task_runner.py:60} INFO - Started process 140 to run task
+[2026-02-26T11:10:35.261+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmp3za85n1s']
+[2026-02-26T11:10:35.273+0000] {standard_task_runner.py:88} INFO - Job 11: Subtask wait_for_input_file
+[2026-02-26T11:10:35.551+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:10:35.881+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:10:35.919+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:10:36.022+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:10:36.084+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:10:36.213+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:10:50.345+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:10:50.359+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:10:50.360+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:10:50.383+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:10:50.399+0000] {standard_task_runner.py:60} INFO - Started process 143 to run task
+[2026-02-26T11:10:50.407+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpc_qzqsui']
+[2026-02-26T11:10:50.414+0000] {standard_task_runner.py:88} INFO - Job 12: Subtask wait_for_input_file
+[2026-02-26T11:10:50.556+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:10:50.692+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:10:50.715+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:10:50.776+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:10:50.822+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:10:50.871+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:11:02.592+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:11:02.606+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:11:02.607+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:11:02.628+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:11:02.638+0000] {standard_task_runner.py:60} INFO - Started process 154 to run task
+[2026-02-26T11:11:02.646+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmp8ftamgtf']
+[2026-02-26T11:11:02.653+0000] {standard_task_runner.py:88} INFO - Job 13: Subtask wait_for_input_file
+[2026-02-26T11:11:02.789+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:11:02.922+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:11:02.945+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:11:02.980+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:11:03.021+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:11:03.069+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:11:15.818+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:11:15.840+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:11:15.842+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:11:15.870+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:11:15.884+0000] {standard_task_runner.py:60} INFO - Started process 157 to run task
+[2026-02-26T11:11:15.891+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpbs4siiup']
+[2026-02-26T11:11:15.897+0000] {standard_task_runner.py:88} INFO - Job 14: Subtask wait_for_input_file
+[2026-02-26T11:11:16.069+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:11:16.259+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:11:16.287+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:11:16.336+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:11:16.387+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:11:16.457+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:11:29.117+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:11:29.129+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:11:29.131+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:11:29.155+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:11:29.165+0000] {standard_task_runner.py:60} INFO - Started process 168 to run task
+[2026-02-26T11:11:29.171+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmprr4vxpz0']
+[2026-02-26T11:11:29.176+0000] {standard_task_runner.py:88} INFO - Job 15: Subtask wait_for_input_file
+[2026-02-26T11:11:29.304+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:11:29.451+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:11:29.476+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:11:29.522+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:11:29.548+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:11:29.612+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:11:41.950+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:11:41.964+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:11:41.967+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:11:41.994+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:11:42.004+0000] {standard_task_runner.py:60} INFO - Started process 171 to run task
+[2026-02-26T11:11:42.011+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpkyb9xjuc']
+[2026-02-26T11:11:42.016+0000] {standard_task_runner.py:88} INFO - Job 16: Subtask wait_for_input_file
+[2026-02-26T11:11:42.138+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:11:42.284+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:11:42.309+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:11:42.351+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:11:42.385+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:11:42.443+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:11:54.098+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:11:54.109+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:11:54.110+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:11:54.127+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:11:54.135+0000] {standard_task_runner.py:60} INFO - Started process 174 to run task
+[2026-02-26T11:11:54.140+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpeyxp4f2n']
+[2026-02-26T11:11:54.144+0000] {standard_task_runner.py:88} INFO - Job 17: Subtask wait_for_input_file
+[2026-02-26T11:11:54.248+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:11:54.352+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:11:54.368+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:11:54.396+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:11:54.433+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:11:54.475+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:12:06.198+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:12:06.212+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:12:06.214+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:12:06.234+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:12:06.243+0000] {standard_task_runner.py:60} INFO - Started process 185 to run task
+[2026-02-26T11:12:06.250+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmprxl2hyxd']
+[2026-02-26T11:12:06.258+0000] {standard_task_runner.py:88} INFO - Job 18: Subtask wait_for_input_file
+[2026-02-26T11:12:06.382+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:12:06.496+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:12:06.517+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:12:06.550+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:12:06.587+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:12:06.632+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:12:19.984+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:12:20.003+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:12:20.005+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:12:20.032+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:12:20.043+0000] {standard_task_runner.py:60} INFO - Started process 188 to run task
+[2026-02-26T11:12:20.050+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmp9c372ix0']
+[2026-02-26T11:12:20.056+0000] {standard_task_runner.py:88} INFO - Job 19: Subtask wait_for_input_file
+[2026-02-26T11:12:20.193+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:12:20.337+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:12:20.360+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:12:20.397+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:12:20.424+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:12:20.481+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:12:31.778+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:12:31.795+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:12:31.797+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:12:31.815+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:12:31.824+0000] {standard_task_runner.py:60} INFO - Started process 191 to run task
+[2026-02-26T11:12:31.829+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpjui22xku']
+[2026-02-26T11:12:31.834+0000] {standard_task_runner.py:88} INFO - Job 20: Subtask wait_for_input_file
+[2026-02-26T11:12:31.959+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:12:32.071+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:12:32.085+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:12:32.108+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:12:32.127+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:12:32.190+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:12:44.012+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:12:44.022+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:12:44.023+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:12:44.039+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:12:44.046+0000] {standard_task_runner.py:60} INFO - Started process 202 to run task
+[2026-02-26T11:12:44.049+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpgmocfv7r']
+[2026-02-26T11:12:44.053+0000] {standard_task_runner.py:88} INFO - Job 21: Subtask wait_for_input_file
+[2026-02-26T11:12:44.134+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:12:44.224+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:12:44.242+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:12:44.274+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:12:44.303+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:12:44.348+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:12:57.930+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:12:57.955+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:12:57.957+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:12:57.991+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:12:58.007+0000] {standard_task_runner.py:60} INFO - Started process 205 to run task
+[2026-02-26T11:12:58.020+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmps64waeal']
+[2026-02-26T11:12:58.028+0000] {standard_task_runner.py:88} INFO - Job 22: Subtask wait_for_input_file
+[2026-02-26T11:12:58.202+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:12:58.385+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:12:58.411+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:12:58.461+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:12:58.514+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:12:58.583+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:13:11.624+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:13:11.639+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:13:11.641+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:13:11.663+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:13:11.673+0000] {standard_task_runner.py:60} INFO - Started process 216 to run task
+[2026-02-26T11:13:11.682+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpn8f3136x']
+[2026-02-26T11:13:11.691+0000] {standard_task_runner.py:88} INFO - Job 23: Subtask wait_for_input_file
+[2026-02-26T11:13:11.873+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:13:12.066+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:13:12.091+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:13:12.135+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:13:12.176+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:13:12.234+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:13:24.326+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:13:24.335+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:13:24.336+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:13:24.349+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:13:24.355+0000] {standard_task_runner.py:60} INFO - Started process 219 to run task
+[2026-02-26T11:13:24.359+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpy7mxfjo4']
+[2026-02-26T11:13:24.362+0000] {standard_task_runner.py:88} INFO - Job 24: Subtask wait_for_input_file
+[2026-02-26T11:13:24.445+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:13:24.529+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:13:24.542+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:13:24.575+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:13:24.612+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:13:24.656+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:13:36.509+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:13:36.518+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:13:36.519+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:13:36.533+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:13:36.540+0000] {standard_task_runner.py:60} INFO - Started process 222 to run task
+[2026-02-26T11:13:36.543+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmpcr498e1l']
+[2026-02-26T11:13:36.546+0000] {standard_task_runner.py:88} INFO - Job 25: Subtask wait_for_input_file
+[2026-02-26T11:13:36.625+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:13:36.715+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:13:36.728+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:13:36.752+0000] {taskinstance.py:2658} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2026-02-26T11:13:36.797+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T11:13:36.850+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-26T11:13:49.304+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:13:49.321+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [queued]>
+[2026-02-26T11:13:49.331+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T11:13:49.350+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonSensor): wait_for_input_file> on 2026-02-26 11:08:36.272920+00:00
+[2026-02-26T11:13:49.358+0000] {standard_task_runner.py:60} INFO - Started process 233 to run task
+[2026-02-26T11:13:49.362+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'failed_task_mail', 'wait_for_input_file', 'manual__2026-02-26T11:08:36.272920+00:00', '--job-id', '26', '--raw', '--subdir', 'DAGS_FOLDER/failed_task_mail.py', '--cfg-path', '/tmp/tmptudeexkj']
+[2026-02-26T11:13:49.366+0000] {standard_task_runner.py:88} INFO - Job 26: Subtask wait_for_input_file
+[2026-02-26T11:13:49.487+0000] {task_command.py:423} INFO - Running <TaskInstance: failed_task_mail.wait_for_input_file manual__2026-02-26T11:08:36.272920+00:00 [running]> on host 434e3a2bb19f
+[2026-02-26T11:13:49.599+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='failed_task_mail' AIRFLOW_CTX_TASK_ID='wait_for_input_file' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T11:08:36.272920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T11:08:36.272920+00:00'
+[2026-02-26T11:13:49.619+0000] {python.py:75} INFO - Poking callable: <function check_file_exists at 0x7cd905eb1160>
+[2026-02-26T11:13:49.624+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/sensors/base.py", line 282, in execute
+    raise AirflowSensorTimeout(message)
+airflow.exceptions.AirflowSensorTimeout: Sensor has timed out; run duration of 305.741105 seconds exceeds the specified timeout of 300.0.
+[2026-02-26T11:13:49.640+0000] {taskinstance.py:1138} INFO - Immediate failure requested. Marking task as FAILED. dag_id=failed_task_mail, task_id=wait_for_input_file, execution_date=20260226T110836, start_date=20260226T111349, end_date=20260226T111349
+[2026-02-26T11:13:49.642+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:207: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2026-02-26T11:13:49.658+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/email.py:154: RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+  send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+
+[2026-02-26T11:13:49.662+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2026-02-26T11:13:51.477+0000] {email.py:281} INFO - Sent an alert email to ['shivay999.ss@gmail.com']
+[2026-02-26T11:13:53.225+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 26 for task wait_for_input_file (Sensor has timed out; run duration of 305.741105 seconds exceeds the specified timeout of 300.0.; 233)
+[2026-02-26T11:13:53.240+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-02-26T11:13:53.275+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

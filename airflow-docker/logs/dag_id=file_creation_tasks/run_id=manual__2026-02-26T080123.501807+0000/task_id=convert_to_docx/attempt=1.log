@@ -1,0 +1,13 @@
+[2026-02-26T08:01:38.462+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: file_creation_tasks.convert_to_docx manual__2026-02-26T08:01:23.501807+00:00 [queued]>
+[2026-02-26T08:01:38.489+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: file_creation_tasks.convert_to_docx manual__2026-02-26T08:01:23.501807+00:00 [queued]>
+[2026-02-26T08:01:38.493+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-02-26T08:01:38.536+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): convert_to_docx> on 2026-02-26 08:01:23.501807+00:00
+[2026-02-26T08:01:38.556+0000] {standard_task_runner.py:60} INFO - Started process 87 to run task
+[2026-02-26T08:01:38.573+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'file_creation_tasks', 'convert_to_docx', 'manual__2026-02-26T08:01:23.501807+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/file_creation.py', '--cfg-path', '/tmp/tmps6a89209']
+[2026-02-26T08:01:38.582+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask convert_to_docx
+[2026-02-26T08:01:38.810+0000] {task_command.py:423} INFO - Running <TaskInstance: file_creation_tasks.convert_to_docx manual__2026-02-26T08:01:23.501807+00:00 [running]> on host 4750b55d9296
+[2026-02-26T08:01:39.040+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='file_creation_tasks' AIRFLOW_CTX_TASK_ID='convert_to_docx' AIRFLOW_CTX_EXECUTION_DATE='2026-02-26T08:01:23.501807+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-26T08:01:23.501807+00:00'
+[2026-02-26T08:01:39.352+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-02-26T08:01:39.393+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=file_creation_tasks, task_id=convert_to_docx, execution_date=20260226T080123, start_date=20260226T080138, end_date=20260226T080139
+[2026-02-26T08:01:39.468+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-26T08:01:39.553+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

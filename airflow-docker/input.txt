@@ -1,0 +1,2 @@
+If we want to upload any file in snowflake firstly we need to create stage and upload data into stage 
+ create or replace stage csv_data

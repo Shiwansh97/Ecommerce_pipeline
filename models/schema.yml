@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_employee
+    columns:
+      - name: EmpID
+        tests:
+          - not_null
+          - unique
+
+  - name: attrition_summary
+    columns:
+      - name: Department
+        tests:
+          - not_null
